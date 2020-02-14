@@ -23,16 +23,15 @@ struct Matrix{
         }
     }
 
-    init(scale: DataType = 1){
-        data = [DataType]()
+
+    init(){
+        data = [DataType](repeating: 0, count: 16)
+    }
+
+    init(scale: DataType){
+        data = [DataType](repeating: 0, count: 16)
         for i in 0...3{
-            for j in 0...3{
-                if i == j{
-                    data.append(scale)
-                }else{
-                    data.append(0)
-                }
-            }
+            data[4 * i + i] = scale
         }
     }
 
